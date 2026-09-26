@@ -47,3 +47,11 @@ PYTHONPATH=app python -m unittest discover -s tests
 gdparse mod/Artsworks-PathogenicMatrix/*.gd && gdlint mod/Artsworks-PathogenicMatrix/*.gd
 python app/run.py --replay path/to/session_X.jsonl   # drive the dashboard without the game
 ```
+
+## License
+
+GPL-3.0 — see [LICENSE](LICENSE).
+
+Note: `data/catalog.demo.json` contains item names and descriptions extracted
+from the Pathogenic demo build. Those names, descriptions and all game assets
+remain the property of the game's developer and are not covered by this license.
