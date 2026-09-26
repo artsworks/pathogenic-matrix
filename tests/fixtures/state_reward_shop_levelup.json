@@ -1,0 +1,40 @@
+{
+  "schema": 2, "ts": 1790000000.0, "session": "1790000000", "mod_version": "0.1.0",
+  "in_run": true, "level_number": 2, "rng_seed": "12345", "parasite": "GREEN",
+  "room": {"name": "Shop1", "type": "Shop"},
+  "player": {
+    "hp": 6, "max_hp": 10, "armor": 0, "level": 3, "dna": 4, "dna_to_level_up": 12,
+    "money": 40, "stamina": 50, "max_stamina": 100, "speed": 1.0, "player_damage_mult": 1.0,
+    "dodge_cd": 1.0, "dodge_invulnerability": 0.3, "pickup_range_mult": 1.0, "dead": false,
+    "slots": [
+      {"slot": "Ext1", "internal": false, "connects_to": ["Int1"],
+       "bodypart": {"id": "assault_rifle", "name": "Pulsar Gland", "rarity": "Common",
+                    "tags": ["External", "EnergyConsumer", "Weapon", "CanBeBulletModified", "CanBeAttackModified", "ShootsBullets"],
+                    "energy": 1.0, "max_energy": 3, "charge": 0.5}},
+      {"slot": "Int1", "internal": true, "connects_to": ["Ext1"], "bodypart": null}
+    ],
+    "mutations": []
+  },
+  "choices": [
+    {"choice_id": "reward:choice3:1", "kind": "reward", "exclusive": true, "options": [
+      {"type": "bodypart", "id": "bullet_mod", "key": "bullet_mod@Rare", "name": "Bullet Mod", "rarity": "Rare",
+       "tags": ["Internal", "BulletModifier"], "needs_connection": [], "tooltip": "[b]Bullet Mod[/b]{hr}+20% damage"},
+      {"type": "bodypart", "id": "generator", "key": "generator@Common", "name": "Generator", "rarity": "Common",
+       "tags": ["Internal", "EnergyGenerator"], "needs_connection": ["EnergyConsumer"]},
+      {"type": "mutation", "id": "speed_mutation", "key": "speed_mutation", "name": "Fast", "description": "Move speed up"}
+    ]},
+    {"choice_id": "shop:9:2", "kind": "shop", "exclusive": false, "options": [
+      {"type": "bodypart", "id": "assault_rifle", "key": "assault_rifle@Common#1", "name": "Pulsar Gland", "rarity": "Common",
+       "tags": ["External", "Weapon", "ShootsBullets"], "cost": 20, "pay_with_blood": false},
+      {"type": "pickup", "id": "health_pickup", "key": "health_pickup#2", "name": "Health", "is_health": true, "cost": 10, "pay_with_blood": false},
+      {"type": "bodypart", "id": "laser", "key": "laser@Epic#3", "name": "Laser", "rarity": "Epic",
+       "tags": ["External", "Weapon"], "cost": 99, "pay_with_blood": false},
+      {"type": "bodypart", "id": "devil", "key": "devil@Legendary#4", "name": "Devil", "rarity": "Legendary",
+       "tags": ["External", "Weapon"], "cost": 9, "pay_with_blood": true}
+    ]},
+    {"choice_id": "level_up:12345:3", "kind": "level_up", "exclusive": true, "options": [
+      {"type": "mutation", "id": "damage_mutation", "key": "damage_mutation", "name": "Harder", "description": "+10% damage"},
+      {"type": "mutation", "id": "dna_mutation", "key": "dna_mutation", "name": "Greedy", "description": "More DNA drops"}
+    ]}
+  ]
+}

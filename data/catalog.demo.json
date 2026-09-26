@@ -1,0 +1,2793 @@
+{
+  "source": "GDRE recovery",
+  "bodypart_tags": {
+    "EnergyGenerator": 0,
+    "EnergyConsumer": 1,
+    "Weapon": 2,
+    "AttackModifier": 3,
+    "CanBeAttackModified": 4,
+    "Lash": 5,
+    "Internal": 6,
+    "External": 7,
+    "Any": 8,
+    "Active": 9,
+    "CanBeBulletModified": 10,
+    "BulletModifier": 11,
+    "UsesBulletWeapons": 12,
+    "ShootsBullets": 13,
+    "Upgrade": 14,
+    "WeaponModifier": 15,
+    "UsesWeapons": 16,
+    "MeleeWeapon": 17,
+    "UsesMeleeWeapons": 18
+  },
+  "bodyparts": [
+    {
+      "id": "assault_rifle",
+      "kind": "external",
+      "name_key": "o_assault_rifle_name",
+      "name": "Pulsar Gland",
+      "desc_key": "o_assault_rifle_desc",
+      "description": "Fires a [b]{shots}[/b] shot burst",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 1.3,
+        "stamina_cost": 12.0,
+        "attack_speed_charge_bonus": 0.0,
+        "shot_recoil": 8.0,
+        "spread_deg": 2.0,
+        "stats_text": "{stat}{dps} {/stat}damage per second\n[font_size=20][b]{shots}({charge}{pos}+{shot_num_charge_bonus}{/pos})x{damage}[/b] damage every [b]{attack_speed}s[/b][/font_size]",
+        "charged_text": "{pos}+{shot_num_charge_bonus}{/pos} shots"
+      },
+      "script": "scn/player/bodyparts/external/assault_rifle.gd"
+    },
+    {
+      "id": "bacteriophage_gun",
+      "kind": "external",
+      "name_key": "o_bacteriophage_gun_name",
+      "name": "Bacteriophage Launcher",
+      "desc_key": "o_bacteriophage_gun_desc",
+      "description": "Shoots a multiplying virus",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 2.0,
+        "stamina_cost": 20.0,
+        "shot_recoil": -50.0,
+        "spread_deg": 10.0,
+        "stats_text": "Stronger bacteriophages spawn when they kill{hr}[b]{pos}{hp}{/pos}[/b] {heart} HP\n[b]{damage}[/b] damage{hr}Can shoot every [b]{attack_speed}s ({charge}{pos}+{attack_speed_charge_mult}%{/pos})[/b]"
+      },
+      "script": "scn/player/bodyparts/external/bacteriophage_gun.gd"
+    },
+    {
+      "id": "burn_lash",
+      "kind": "external",
+      "name_key": "o_burn_lash_name",
+      "name": "Pyroflagellum",
+      "desc_key": "o_burn_lash_desc",
+      "description": "Leaves a {burncol}burning[/color] trail when dodging",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Lash",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Trail applies {pos}{burn_amount}{/pos} {burncol}burn[/color] ({charge}{pos}+{burn_amount_charged}{/pos}) every [b]{attack_speed}s[/b]{hr}Moderately improves speed, turn rate and dodge",
+        "charged_text": "{pos}+{burn_amount_charged}{/pos} {burncol}burn[/color]{hr}{burncol}Burn[/color] deals damage every [b]1s[/b]\n{burncol}Burn[/color] amount is halved after each damage tick",
+        "chainable_text": "Modifiers affect the {burncol}burn[/color] effect"
+      },
+      "script": "scn/player/bodyparts/external/burn_lash.gd"
+    },
+    {
+      "id": "cannon",
+      "kind": "external",
+      "name_key": "o_cannon_name",
+      "name": "Spore Cannon",
+      "desc_key": "o_cannon_desc",
+      "description": "Slow-firing but powerful",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 1.5,
+        "stamina_cost": 8.0,
+        "shot_recoil": 10.0
+      },
+      "script": "scn/player/bodyparts/external/cannon.gd"
+    },
+    {
+      "id": "continuous_laser",
+      "kind": "external",
+      "name_key": "o_continuous_laser_name",
+      "name": "o_continuous_laser_name",
+      "desc_key": "o_continuous_laser_desc",
+      "description": "o_continuous_laser_desc",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": true,
+      "stats": {
+        "attack_speed": 1.0,
+        "stamina_cost": 5.0,
+        "shot_recoil": 7.0
+      },
+      "script": "scn/player/bodyparts/external/continuous_laser.gd"
+    },
+    {
+      "id": "dagger",
+      "kind": "external",
+      "name_key": "o_dagger_name",
+      "name": "Stinger Tendril",
+      "desc_key": "o_dagger_desc",
+      "description": "Fast, short-range melee attack",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "MeleeWeapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 2.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.15,
+        "stamina_cost": 2.0,
+        "shot_recoil": -25.0,
+        "spread_deg": 10.0
+      },
+      "script": null
+    },
+    {
+      "id": "drill",
+      "kind": "external",
+      "name_key": "o_drill_name",
+      "name": "Helical Proboscis",
+      "desc_key": "o_drill_desc",
+      "description": "Drill that takes time to spin up",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "MeleeWeapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.5,
+        "stamina_cost": 5.0,
+        "shot_recoil": -50.0
+      },
+      "script": "scn/player/bodyparts/external/drill.gd"
+    },
+    {
+      "id": "dual_blades",
+      "kind": "external",
+      "name_key": "o_dual_blades_name",
+      "name": "Tri-phase Tendril",
+      "desc_key": "o_dual_blades_desc",
+      "description": "Third attack deals {pos}3x{/pos} damage",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "MeleeWeapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.6,
+        "stamina_cost": 6.0,
+        "shot_recoil": 20.0,
+        "spread_deg": 10.0
+      },
+      "script": "scn/player/bodyparts/external/dual_blades.gd"
+    },
+    {
+      "id": "electric_harpoon",
+      "kind": "external",
+      "name_key": "o_electric_harpoon_name",
+      "name": "Conductive Cnidocyst",
+      "desc_key": "o_electric_harpoon_desc",
+      "description": "Links enemies together\nLinked enemies share {pos}{damage_share}%{/pos} damage dealt",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 2.0,
+        "stamina_cost": 30.0,
+        "shot_recoil": 100.0,
+        "stats_after_text": "Pierces {pos}{num_pierces}{/pos} times"
+      },
+      "script": "scn/player/bodyparts/external/electric_harpoon.gd"
+    },
+    {
+      "id": "flamethrower",
+      "kind": "external",
+      "name_key": "o_flamethrower_name",
+      "name": "Oxidator",
+      "desc_key": "o_flamethrower_desc",
+      "description": "Spews short-range, piercing acid",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.2,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.03,
+        "stamina_cost": 0.2,
+        "spread_deg": 15.0
+      },
+      "script": "scn/player/bodyparts/external/flamethrower.gd"
+    },
+    {
+      "id": "freeze_lash",
+      "kind": "external",
+      "name_key": "o_freeze_lash_name",
+      "name": "Cryoflagellum",
+      "desc_key": "o_freeze_lash_desc",
+      "description": "When dodging, {freezecol}freezes[/color] nearby enemies",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Lash",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_after_text": "{freezecol}Freezes[/color] for [b]{freeze_duration}s[/b] and deals [b]{damage}[/b] damage{hr}Moderately improves speed, turn rate and dodge",
+        "charged_text": "{pos}+{charge_size_mult}%{/pos} {freezecol}freeze[/color] size"
+      },
+      "script": "scn/player/bodyparts/external/freeze_lash.gd"
+    },
+    {
+      "id": "grenade_launcher",
+      "kind": "external",
+      "name_key": "o_grenade_launcher_name",
+      "name": "Dehiscence Lobber",
+      "desc_key": "o_grenade_launcher_desc",
+      "description": "Launches bombs that explode on enemy contact",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 0.7,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 2.5,
+        "stamina_cost": 20.0,
+        "shot_recoil": 10.0,
+        "spread_deg": 15.0,
+        "stats_after_text": "Explosions deal friendly fire"
+      },
+      "script": "scn/player/bodyparts/external/grenade_launcher.gd"
+    },
+    {
+      "id": "gun",
+      "kind": "external",
+      "name_key": "o_gun_name",
+      "name": "Caustic Secretor",
+      "desc_key": "o_gun_desc",
+      "description": "Fast shooting gun",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stamina_cost": 0.5,
+        "spread_deg": 12.0
+      },
+      "script": "scn/player/bodyparts/external/gun.gd"
+    },
+    {
+      "id": "hammer",
+      "kind": "external",
+      "name_key": "o_hammer_name",
+      "name": "Capsid Flail",
+      "desc_key": "o_hammer_desc",
+      "description": "Slow but powerful circular melee attack",
+      "flavor": "Retrofitted SARS-CoV-2 on a chain",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "MeleeWeapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.5,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 3.0,
+        "stamina_cost": 15.0,
+        "shot_recoil": 80.0,
+        "spread_deg": 10.0
+      },
+      "script": null
+    },
+    {
+      "id": "harpoon",
+      "kind": "external",
+      "name_key": "o_harpoon_name",
+      "name": "Cnidocyst",
+      "desc_key": "o_harpoon_desc",
+      "description": "Harpoon that binds enemies with a thread",
+      "flavor": "Subdues prey by ejecting a barbed spine",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 2.0,
+        "stamina_cost": 25.0,
+        "shot_recoil": 100.0,
+        "stats_after_text": "Pierces {pos}{num_pierces}{/pos} times"
+      },
+      "script": "scn/player/bodyparts/external/harpoon.gd"
+    },
+    {
+      "id": "laser",
+      "kind": "external",
+      "name_key": "o_laser_name",
+      "name": "Thermal Lance",
+      "desc_key": "o_laser_desc",
+      "description": "A piercing laser of pure heat",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 1.0,
+        "stamina_cost": 5.0,
+        "shot_recoil": 7.0
+      },
+      "script": "scn/player/bodyparts/external/laser.gd"
+    },
+    {
+      "id": "lash",
+      "kind": "external",
+      "name_key": "o_lash_name",
+      "name": "Flagellum",
+      "desc_key": "o_lash_desc",
+      "description": "Provides movement",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Lash"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Improves speed ({charge}{pos}+{charge_mult}%{/pos}), handling and dodge{hr}Can only propel within the angle of the slot",
+        "stats_after_text": "{pos}+{rarity_mult}%{/pos} speed",
+        "charged_text": "{pos}+{charge_mult}%{/pos} speed"
+      },
+      "script": "scn/player/bodyparts/external/lash.gd"
+    },
+    {
+      "id": "lightning_gun",
+      "kind": "external",
+      "name_key": "o_lightning_gun_name",
+      "name": "Galvanic Conduit",
+      "desc_key": "o_lightning_gun_desc",
+      "description": "Emits volatile electric arcs",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 0.7,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.3,
+        "stamina_cost": 0.8,
+        "shot_recoil": 8.0,
+        "spread_deg": 40.0
+      },
+      "script": "scn/player/bodyparts/external/lightning_gun.gd"
+    },
+    {
+      "id": "machine_gun",
+      "kind": "external",
+      "name_key": "o_machine_gun_name",
+      "name": "Rotary Extruder",
+      "desc_key": "o_machine_gun_desc",
+      "description": "Can only shoot when {charge}{nb}{ccol}overcharged{/ccol}",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 0.7,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.04,
+        "stamina_cost": 0.9,
+        "shot_recoil": 6.0,
+        "spread_deg": 20.0
+      },
+      "script": "scn/player/bodyparts/external/machine_gun.gd"
+    },
+    {
+      "id": "mine_launcher",
+      "kind": "external",
+      "name_key": "o_mine_launcher_name",
+      "name": "Cyst Depositor",
+      "desc_key": "o_mine_launcher_desc",
+      "description": "Spawns a powerful mine",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 2.0,
+        "stamina_cost": 15.0,
+        "spread_deg": 10.0
+      },
+      "script": "scn/player/bodyparts/external/mine_launcher.gd"
+    },
+    {
+      "id": "orb_gun",
+      "kind": "external",
+      "name_key": "o_orb_name",
+      "name": "Mucus Emitter",
+      "desc_key": "o_orb_desc",
+      "description": "Spews a slow orb of continuous damage",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 3.5,
+        "stamina_cost": 20.0,
+        "spread_deg": 5.0
+      },
+      "script": null
+    },
+    {
+      "id": "pizza_cutter",
+      "kind": "external",
+      "name_key": "o_pizza_name",
+      "name": "Gyrase Wheel",
+      "desc_key": "o_pizza_desc",
+      "description": "Long range shredding sawblade",
+      "flavor": "Time to cut yourself a hot slice",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "MeleeWeapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.4,
+        "stamina_cost": 3.0,
+        "shot_recoil": -5.0
+      },
+      "script": "scn/player/bodyparts/external/pizza_cutter.gd"
+    },
+    {
+      "id": "rocket_launcher",
+      "kind": "external",
+      "name_key": "o_rocket_launcher_name",
+      "name": "Blastocyst Mortar",
+      "desc_key": "o_rocket_launcher_desc",
+      "description": "Heavy artillery",
+      "flavor": "Watch out",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 0.7,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 1.7,
+        "stamina_cost": 8.0,
+        "shot_recoil": 10.0,
+        "stats_after_text": "Explosions deal friendly fire"
+      },
+      "script": "scn/player/bodyparts/external/rocket_launcher.gd"
+    },
+    {
+      "id": "shield",
+      "kind": "external",
+      "name_key": "o_shield_name",
+      "name": "Chitin Shield",
+      "desc_key": "o_shield_desc",
+      "description": "Blocks incoming attacks",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.5,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{ccol}3x {charge} Overcharge{/ccol} for {ccol}[b]{charge_time}s[/b]{/ccol} when blocking a projectile"
+      },
+      "script": "scn/player/bodyparts/external/shield.gd"
+    },
+    {
+      "id": "shotgun",
+      "kind": "external",
+      "name_key": "o_shotgun_name",
+      "name": "Scatter Ejector",
+      "desc_key": "o_shotgun_desc",
+      "description": "Fires [b]{shots}[/b] medium range shots",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.9,
+        "stamina_cost": 3.5,
+        "attack_speed_charge_bonus": 0.0,
+        "shot_recoil": 5.0,
+        "stats_text": "{stat}{dps} {/stat}damage per second\n[font_size=20][b]{shots}({charge}{pos}+{shot_num_charge_bonus}{/pos})x{damage}[/b] damage every [b]{attack_speed}s[/b][/font_size]",
+        "charged_text": "{pos}+{shot_num_charge_bonus}{/pos} shots"
+      },
+      "script": "scn/player/bodyparts/external/shotgun.gd"
+    },
+    {
+      "id": "shotgun_close",
+      "kind": "external",
+      "name_key": "o_shotgun_close_name",
+      "name": "Cluster Ejector",
+      "desc_key": "o_shotgun_close_desc",
+      "description": "Fires [b]{shots}[/b] short range shots",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 1.5,
+        "stamina_cost": 5.0,
+        "attack_speed_charge_bonus": 0.0,
+        "shot_recoil": 20.0,
+        "spread_deg": 25.0,
+        "stats_text": "{stat}{dps} {/stat}damage per second\n[font_size=20][b]{shots}({charge}{pos}+{shot_num_charge_bonus}{/pos})x{damage}[/b] damage every [b]{attack_speed}s[/b][/font_size]",
+        "charged_text": "{pos}+{shot_num_charge_bonus}{/pos} shots"
+      },
+      "script": "scn/player/bodyparts/external/shotgun_close.gd"
+    },
+    {
+      "id": "sidegun",
+      "kind": "external",
+      "name_key": "o_side_gun_name",
+      "name": "Lateral Vent",
+      "desc_key": "o_side_gun_desc",
+      "description": "Shoots 2 short-range projectiles sideways",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 0.07,
+        "stamina_cost": 0.5,
+        "spread_deg": 20.0,
+        "stats_after_text": "Cannot aim"
+      },
+      "script": "scn/player/bodyparts/external/sidegun.gd"
+    },
+    {
+      "id": "sniper",
+      "kind": "external",
+      "name_key": "o_sniper_name",
+      "name": "Pressurized Spicule",
+      "desc_key": "o_sniper_desc",
+      "description": "Precise with high kinetic power",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "ShootsBullets"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 2.5,
+        "stamina_cost": 25.0,
+        "shot_recoil": 100.0
+      },
+      "script": null
+    },
+    {
+      "id": "spawn_gun",
+      "kind": "external",
+      "name_key": "o_spawn_gun_name",
+      "name": "Nidublast",
+      "desc_key": "o_spawn_gun_desc",
+      "description": "Shoots out a melee minion",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 4.0,
+        "stamina_cost": 20.0,
+        "shot_recoil": -50.0,
+        "spread_deg": 10.0,
+        "stats_text": "[b]{pos}{hp}{/pos}[/b] {heart} HP\n[b]{damage}[/b] damage{hr}Can shoot every [b]{attack_speed}s ({charge}{pos}+{attack_speed_charge_mult}%{/pos})[/b]"
+      },
+      "script": "scn/player/bodyparts/external/spawn_gun.gd"
+    },
+    {
+      "id": "spear",
+      "kind": "external",
+      "name_key": "o_spear_name",
+      "name": "Perforator Tendril",
+      "desc_key": "o_spear_desc",
+      "description": "Piercing melee weapon",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "MeleeWeapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.4,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 1.4,
+        "stamina_cost": 7.0,
+        "shot_recoil": -50.0,
+        "spread_deg": 10.0
+      },
+      "script": null
+    },
+    {
+      "id": "sword",
+      "kind": "external",
+      "name_key": "o_sword_name",
+      "name": "Lacerator Tendril",
+      "desc_key": "o_sword_desc",
+      "description": "Slashing melee weapon",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Weapon",
+        "MeleeWeapon",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.4,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "attack_speed": 1.0,
+        "stamina_cost": 5.0,
+        "shot_recoil": -50.0,
+        "spread_deg": 10.0
+      },
+      "script": "scn/player/bodyparts/external/sword.gd"
+    },
+    {
+      "id": "toxin_lash",
+      "kind": "external",
+      "name_key": "o_toxin_lash_name",
+      "name": "Toxic Flagellum",
+      "desc_key": "o_toxin_lash_desc",
+      "description": "Leaves a toxic trail",
+      "flavor": "",
+      "tags": [
+        "External",
+        "EnergyConsumer",
+        "Lash",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.2,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_after_text": "Deals [b]{damage}[/b] damage every [b]{attack_speed}s[/b]\n[b]{length}s[/b] toxin duration ({charge}{pos}+{charge_length_mult}%{/pos}){hr}Moderately improves speed, turn rate and dodge",
+        "charged_text": "{pos}+{charge_length_mult}%{/pos} toxin duration"
+      },
+      "script": "scn/player/bodyparts/external/toxin_lash.gd"
+    },
+    {
+      "id": "armor_maker",
+      "kind": "internal",
+      "name_key": "o_armor_maker_name",
+      "name": "Ossificator",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Spawns {pos}[b]1[/b]{/pos} {armor} armor after\nbeing {ccol}{charge}{nb}overcharged{/ccol} for [b]{ccol}{max_energy}s{/ccol}[/b]",
+        "max_energy": 60.0
+      },
+      "script": "scn/player/bodyparts/internal/armor_maker.gd"
+    },
+    {
+      "id": "auto_shooter",
+      "kind": "internal",
+      "name_key": "o_auto_shooter_name",
+      "name": "Photoreceptor",
+      "desc_key": "o_auto_shooter_desc",
+      "description": "Connected weapons shoot automatically at the closest enemy",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "WeaponModifier"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "Weapon"
+      ],
+      "disabled": false,
+      "stats": {
+        "charged_text": "{pos}+{attack_speed_charge_mult}%{/pos} attack speed"
+      },
+      "script": "scn/player/bodyparts/internal/auto_shooter.gd"
+    },
+    {
+      "id": "backstab",
+      "kind": "internal",
+      "name_key": "o_backstab_name",
+      "name": "Dorsal Lysosome",
+      "desc_key": "o_backstab_desc",
+      "description": "Backstabs deal {pos}+{damage_mult}%{/pos} damage",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier",
+        "CanBeAttackModified",
+        "CanBeBulletModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "charged_text": "{pos}+{charge_mult_bonus}%{/pos} damage on backstab",
+        "chainable_text": "Modifiers apply after a backstab"
+      },
+      "script": "scn/player/bodyparts/internal/backstab.gd"
+    },
+    {
+      "id": "burn",
+      "kind": "internal",
+      "name_key": "o_burn_name",
+      "name": "Pyrosome",
+      "desc_key": "o_burn_desc",
+      "description": "Attacks apply {burncol}burn[/color]",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.5,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Apply {pos}{burn_amount}{/pos} {burncol}burn[/color] ({charge}{pos}+{burn_amount_charged}{/pos})",
+        "charged_text": "{pos}+{burn_amount_charged}{/pos} {burncol}burn[/color]{hr}{burncol}Burn[/color] deals damage every [b]1s[/b]\n{burncol}Burn[/color] amount is halved after each damage tick",
+        "chainable_text": "Modifiers affect the {burncol}burn[/color] effect"
+      },
+      "script": "scn/player/bodyparts/internal/burn.gd"
+    },
+    {
+      "id": "charge_active",
+      "kind": "internal",
+      "name_key": "o_charge_active_name",
+      "name": "Vacuole",
+      "desc_key": "o_charge_active_desc",
+      "description": "Press {activate_key} to release stored {ccol}{charge}{nb}overcharge{/ccol}",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyGenerator",
+        "EnergyConsumer"
+      ],
+      "random_weight": 0.8,
+      "needs_connection_warning": [
+        "EnergyConsumer",
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Can hold up to [b]{max_energy}s[/b] of {ccol}{charge}{nb}overcharge{/ccol}{hr}[b]{effectiveness}%[/b] effectiveness",
+        "max_energy": 10.0
+      },
+      "script": "scn/player/bodyparts/internal/charge_active.gd"
+    },
+    {
+      "id": "circle_shot_active",
+      "kind": "internal",
+      "name_key": "o_circle_shot_name",
+      "name": "Projectile Surge",
+      "desc_key": "o_circle_shot_desc",
+      "description": "Press {activate_key} to shoot out a circle of [b]{projectiles}[/b] attacks of each connected weapon",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "Active",
+        "EnergyConsumer",
+        "UsesWeapons",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator",
+        "Weapon"
+      ],
+      "disabled": false,
+      "stats": {
+        "chainable_text": "Modifiers affect each attack",
+        "max_energy": 20.0
+      },
+      "script": "scn/player/bodyparts/internal/circle_shot_active.gd"
+    },
+    {
+      "id": "conduit",
+      "kind": "internal",
+      "name_key": "o_conduit_name",
+      "name": "Vesicle",
+      "desc_key": "o_conduit_desc",
+      "description": "Conduit that passes on effects of connected organelles",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyGenerator",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "Weapon",
+        "WeaponModifier"
+      ],
+      "random_weight": 0.6,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}{double_chance}%{/pos} chance to trigger connected attack modifiers twice",
+        "charged_text": "{ccol}{charge} Overcharge{/ccol} connected organelles",
+        "chainable_text": "Modifiers affect each attack"
+      },
+      "script": "scn/player/bodyparts/internal/conduit.gd"
+    },
+    {
+      "id": "damage_charge_mult",
+      "kind": "internal",
+      "name_key": "o_damage_charge_mult_name",
+      "name": "Starved Oxysome",
+      "desc_key": "o_damage_charge_mult_desc",
+      "description": "Lowers damage unless {ccol}{charge}{nb}overcharged[/color]",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified",
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{neg}{damage_mult}%{/neg} damage ({charge}{pos}+{charge_mult_bonus}%{/pos})",
+        "charged_text": "{pos}+{charge_mult_bonus}%{/pos} damage"
+      },
+      "script": "scn/player/bodyparts/internal/damage_charge_mult.gd"
+    },
+    {
+      "id": "damage_mult",
+      "kind": "internal",
+      "name_key": "o_damage_mult_name",
+      "name": "Oxysome",
+      "desc_key": "o_damage_mult_desc",
+      "description": "Improves damage",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier"
+      ],
+      "random_weight": 4.5,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{damage_mult}%{/pos} damage ({charge}{pos}+{charge_mult_bonus}%{/pos})",
+        "charged_text": "{pos}+{charge_mult_bonus}%{/pos} damage"
+      },
+      "script": "scn/player/bodyparts/internal/damage_mult.gd"
+    },
+    {
+      "id": "damage_no_attack",
+      "kind": "internal",
+      "name_key": "o_damage_no_attack_name",
+      "name": "Turgosome",
+      "desc_key": "o_damage_no_attack_desc",
+      "description": "Increases damage every second not attacking",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{neg}{base_damage}%{/neg} base damage\nCurrently {damage_color}{damage_mult}%[/color]/{pos}{max_damage}%{/pos} damage{hr}{pos}+{damage_per_sec}%{/pos} ({charge}{pos}+{damage_per_sec_charged}%{/pos}) damage every second",
+        "charged_text": "{pos}+{damage_per_sec_charged}%{/pos} damage every second",
+        "chainable_text": "Modifiers apply if damage is [b]charged to maximum[/b]",
+        "generate_charge_progress": true
+      },
+      "script": "scn/player/bodyparts/internal/damage_no_attack.gd"
+    },
+    {
+      "id": "damage_up_on_kill",
+      "kind": "internal",
+      "name_key": "o_damage_up_on_kill_name",
+      "name": "Phagosome",
+      "desc_key": "o_damage_up_on_kill_desc",
+      "description": "When an affected attack kills an enemy, permanently gain damage",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier"
+      ],
+      "random_weight": 0.8,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{damage_color}{damage_mult}%[/color] damage\n{pos}+{bonus_added}%{/pos} permanent damage gain on kill ({charge}{pos}+{charge_bonus_added}%{/pos})",
+        "charged_text": "{pos}+{charge_bonus_added}%{/pos} permanent damage gain on kill"
+      },
+      "script": "scn/player/bodyparts/internal/damage_up_on_kill.gd"
+    },
+    {
+      "id": "deflector",
+      "kind": "internal",
+      "name_key": "o_deflector_name",
+      "name": "Resilinoplast",
+      "desc_key": "o_deflector_desc",
+      "description": "Attacks reflect enemy projectiles",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier",
+        "BulletModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}{chance}%{/pos} chance for projectiles ({charge}{pos}+{charge_chance}%{/pos})\n{pos}100%{/pos} chance for melee attacks\nReflected projectiles deal [b]{damage}[/b] damage",
+        "charged_text": "{pos}+{charge_chance}%{/pos} chance",
+        "chainable_text": "Modifiers affect [b]reflected projectiles[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/deflector.gd"
+    },
+    {
+      "id": "dna_maker",
+      "kind": "internal",
+      "name_key": "o_dna_maker_name",
+      "name": "Mutagen",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Creates {dna} {dnacol}DNA[/color] after\nbeing {ccol}{charge}{nb}overcharged{/ccol} for {ccol}[b]{max_energy}s[/b]{/ccol}",
+        "max_energy": 18.0
+      },
+      "script": "scn/player/bodyparts/internal/dna_maker.gd"
+    },
+    {
+      "id": "dodge_charge",
+      "kind": "internal",
+      "name_key": "o_dodge_charge_name",
+      "name": "Elusive Mitochondrion",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyConsumer"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "After [b]dodging through a projectile[/b]:\n{ccol}{provided_charge}{charge} overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}"
+      },
+      "script": "scn/player/bodyparts/internal/dodge_charge.gd"
+    },
+    {
+      "id": "dodge_explode",
+      "kind": "internal",
+      "name_key": "o_dodge_explode_name",
+      "name": "Sympathetic Detonator",
+      "desc_key": "o_dodge_explode_desc",
+      "description": "Affected attacks explode when dashing",
+      "flavor": "Fight or flight",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Explosions deal {pos}{damage_mult}%{/pos} damage",
+        "stats_after_text": "{pos}+{scale_mult}%{/pos} splash size ({charge}{pos}+{charge_scale_mult}%{/pos})",
+        "charged_text": "{pos}+{charge_scale_mult}%{/pos} splash size",
+        "chainable_text": "Modifiers affect the [b]explosion[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/dodge_explode.gd"
+    },
+    {
+      "id": "explosion_active",
+      "kind": "internal",
+      "name_key": "o_explosion_active_name",
+      "name": "Explosive Charge",
+      "desc_key": "o_explosion_active_desc",
+      "description": "Press {activate_key} to explode and deal [b]{damage}[/b] damage to nearby enemies",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{radius_mult}%{/pos} size",
+        "max_energy": 10.0
+      },
+      "script": "scn/player/bodyparts/internal/explosion_active.gd"
+    },
+    {
+      "id": "fast_shooting_minion_active",
+      "kind": "internal",
+      "name_key": "o_fast_shooting_minion_active_name",
+      "name": "Swarm Nidus",
+      "desc_key": "o_fast_shooting_minion_active_desc",
+      "description": "Press {activate_key} to spawn a fast shooting minion",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified",
+        "CanBeBulletModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}[b]{hp}[/b]{/pos} {heart} HP\n[b]{damage}[/b] damage every [b]{attack_speed}s[/b]",
+        "chainable_text": "Modifiers affect [b]minion attacks[/b]",
+        "max_energy": 12.0
+      },
+      "script": "scn/player/bodyparts/internal/fast_shooting_minion_active.gd"
+    },
+    {
+      "id": "firerate_no_miss",
+      "kind": "internal",
+      "name_key": "o_firerate_no_miss_name",
+      "name": "Resonant Cavity",
+      "desc_key": "o_firerate_no_miss_desc",
+      "description": "Improves attack speed after each hit, decreases on a miss",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "WeaponModifier",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "Weapon",
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{attack_speed_per_hit}%{/pos} attack speed for each hit ({charge}{pos}+{attack_speed_per_hit_charged}%{/pos})\nCurrently {pos}+{attack_speed}%{/pos}/{pos}{max_attack_speed}%{/pos}",
+        "charged_text": "{pos}+{attack_speed_per_hit_charged}%{/pos} attack speed for each hit",
+        "chainable_text": "Modifiers apply if attack speed is [b]charged to maximum[/b]",
+        "generate_charge_progress": true
+      },
+      "script": "scn/player/bodyparts/internal/firerate_no_miss.gd"
+    },
+    {
+      "id": "freeze",
+      "kind": "internal",
+      "name_key": "o_freeze_name",
+      "name": "Cryosome",
+      "desc_key": "o_freeze_desc",
+      "description": "Attacks have a chance to {freezecol}freeze[/color]",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.5,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}{freeze_chance}%{/pos} {freezecol}freeze[/color] chance ({charge}{pos}+{charge_freeze_chance}%{/pos})\n{pos}{freeze_duration}s{/pos} {freezecol}freeze[/color] duration",
+        "charged_text": "{pos}+{charge_freeze_chance}%{/pos} {freezecol}freeze[/color] chance",
+        "chainable_text": "Modifiers affect {freezecol}freezing[/color] attacks"
+      },
+      "script": "scn/player/bodyparts/internal/freeze.gd"
+    },
+    {
+      "id": "generator",
+      "kind": "internal",
+      "name_key": "o_generator_name",
+      "name": "Entrant Mitochondrion",
+      "desc_key": null,
+      "description": null,
+      "flavor": "Mitochondria is the powerhouse of the cell",
+      "tags": [
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.8,
+      "needs_connection_warning": [
+        "EnergyConsumer"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "When [b]starting a room[/b]:\n{ccol}{provided_charge}{charge} overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}"
+      },
+      "script": "scn/player/bodyparts/internal/generator.gd"
+    },
+    {
+      "id": "gib_explode_active",
+      "kind": "internal",
+      "name_key": "o_gib_explode_active_name",
+      "name": "Necrolytic Igniter",
+      "desc_key": "o_gib_explode_active_desc",
+      "description": "Press {activate_key} to explode gibs of dead enemies",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 0.8,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{radius_mult}%{/pos} size",
+        "stats_after_text": "Explosions deal [b]{damage}[/b] damage",
+        "max_energy": 6.0
+      },
+      "script": "scn/player/bodyparts/internal/gib_explode_active.gd"
+    },
+    {
+      "id": "gravity_pull",
+      "kind": "internal",
+      "name_key": "o_gravity_pull_name",
+      "name": "Magnetosome",
+      "desc_key": "o_gravity_pull_desc",
+      "description": "Projectiles are pulled towards the organelle",
+      "flavor": "Contains iron-rich magnetic particles within a lipid membrane",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [
+        "CanBeBulletModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{pierces}{/pos} pierces ({charge}{pos}+{charge_pierces}{/pos})\n{pos}{lifetime_mult}x{/pos} longer projectile lifetime ({charge}{pos}+{charge_lifetime_mult}x{/pos})",
+        "charged_text": "{pos}+{charge_pierces}{/pos} pierces\n{pos}{charge_lifetime_mult}x{/pos} longer projectile lifetime",
+        "chainable_text": "Modifiers apply when projectiles [b]pass through the organelle[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/gravity_pull.gd"
+    },
+    {
+      "id": "heal",
+      "kind": "internal",
+      "name_key": "o_heal_name",
+      "name": "Regenerator",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer"
+      ],
+      "random_weight": 1.8,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Spawns {pos}[b]1[/b]{/pos} {heart} HP after\nbeing {ccol}{charge}{nb}overcharged{/ccol} for {ccol}[b]{max_energy}s[/b]{/ccol}",
+        "max_energy": 30.0
+      },
+      "script": "scn/player/bodyparts/internal/heal.gd"
+    },
+    {
+      "id": "heavy_minion",
+      "kind": "internal",
+      "name_key": "o_heavy_minion_name",
+      "name": "Apex Nidus",
+      "desc_key": "o_heavy_minion_desc",
+      "description": "Spawns a single heavy melee minion",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "[b]{pos}{hp}{/pos}[/b] {heart} HP\n[b]{damage}[/b] damage{hr}Revives the minion in battle after being {ccol}{charge}{nb}overcharged{/ccol} for {ccol}[b]{max_energy}s[/b]{/ccol}",
+        "chainable_text": "Modifiers affect [b]minion's attacks[/b]",
+        "max_energy": 25.0
+      },
+      "script": "scn/player/bodyparts/internal/heavy_minion.gd"
+    },
+    {
+      "id": "hit_charge",
+      "kind": "internal",
+      "name_key": "o_hit_charge_name",
+      "name": "Recuperative Mitochondrion",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.8,
+      "needs_connection_warning": [
+        "EnergyConsumer",
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "After [b]{num_attacks} successful attacks[/b] from connected organelles:\n{ccol}{max_charge}{charge}{nb}overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}"
+      },
+      "script": "scn/player/bodyparts/internal/hit_charge.gd"
+    },
+    {
+      "id": "homing",
+      "kind": "internal",
+      "name_key": "o_homing_name",
+      "name": "Attractor",
+      "desc_key": "o_homing_desc",
+      "description": "Projectiles home in on enemies",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeBulletModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "charged_text": "{pos}+{charge_homing}%[/color] homing power"
+      },
+      "script": "scn/player/bodyparts/internal/homing.gd"
+    },
+    {
+      "id": "hurt_charge",
+      "kind": "internal",
+      "name_key": "o_hurt_charge_name",
+      "name": "Vengeful Mitochondrion",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyConsumer"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "After [b]getting hit[/b]:\n{ccol}{provided_charge}{charge} overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}"
+      },
+      "script": "scn/player/bodyparts/internal/hurt_charge.gd"
+    },
+    {
+      "id": "invul_active",
+      "kind": "internal",
+      "name_key": "o_invul_active_name",
+      "name": "Iridophore Membrane",
+      "desc_key": "o_invul_active_desc",
+      "description": "Press {activate_key} to become invulnerable and reflect projectiles for [b]{duration}s[/b]",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyConsumer",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Reflected projectiles deal [b]{damage}[/b] damage",
+        "chainable_text": "Modifiers affect [b]reflected projectiles[/b]",
+        "max_energy": 15.0
+      },
+      "script": "scn/player/bodyparts/internal/invul_active.gd"
+    },
+    {
+      "id": "kill_charge",
+      "kind": "internal",
+      "name_key": "o_kill_charge_name",
+      "name": "Berserk Mitochondrion",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.8,
+      "needs_connection_warning": [
+        "EnergyConsumer"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "After [b]each kill[/b]:\n{ccol}{provided_charge}{charge}{nb}overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}"
+      },
+      "script": "scn/player/bodyparts/internal/kill_charge.gd"
+    },
+    {
+      "id": "lightning",
+      "kind": "internal",
+      "name_key": "o_lightning_name",
+      "name": "Galvanic Infuser",
+      "desc_key": "o_lightning_desc",
+      "description": "Attacks have a chance to arc to nearby enemies",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeAttackModified",
+        "CanBeBulletModified"
+      ],
+      "random_weight": 1.5,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}{damage_mult}%{/pos} arc damage\n{pos}{chance}%{/pos} chance to arc ({charge}{pos}+{charge_chance}%{/pos})",
+        "charged_text": "{pos}+{charge_chance}%{/pos} chance to arc",
+        "chainable_text": "Modifiers affect the [b]arc[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/lightning.gd"
+    },
+    {
+      "id": "lightning_connection",
+      "kind": "internal",
+      "name_key": "o_lightning_connection_name",
+      "name": "Galvanic Weave",
+      "desc_key": "o_lightning_connection_desc",
+      "description": "Attacks arc to other affected attacks",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeAttackModified",
+        "CanBeBulletModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}{damage_mult}%{/pos} arc damage ({charge}{pos}+{charged_damage_mult}%{/pos})",
+        "charged_text": "{pos}+{charged_damage_mult}%{/pos} arc damage",
+        "chainable_text": "Modifiers affect the [b]arc[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/lightning_connection.gd"
+    },
+    {
+      "id": "max_hp_up",
+      "kind": "internal",
+      "name_key": "o_max_hp_up_name",
+      "name": "Endospore",
+      "desc_key": "o_max_hp_up_stats",
+      "description": "{pos}+{max_hp}{/pos} max {heart}{nb} HP",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "charged_text": "{pos}+{charge_hp_drop_chance}%{/pos} chance to spawn a {heart}{nb}heart when finishing a room"
+      },
+      "script": "scn/player/bodyparts/internal/max_hp_up.gd"
+    },
+    {
+      "id": "melee_on_ranged",
+      "kind": "internal",
+      "name_key": "o_melee_on_ranged_name",
+      "name": "Golgi Apparatus",
+      "desc_key": "o_melee_on_ranged_desc",
+      "description": "Transfers attacks from melee weapons into projectiles",
+      "flavor": "Packages proteins into vesicles for delivery to their final destinations",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified",
+        "UsesMeleeWeapons"
+      ],
+      "random_weight": 0.8,
+      "needs_connection_warning": [
+        "CanBeBulletModified",
+        "MeleeWeapon"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{color}{damage_mult}%[/color] damage of melee attacks",
+        "charged_text": "{pos}+{attack_speed_charge_mult}%{/pos} attack speed of melee weapons",
+        "chainable_text": "Modifiers affect [b]melee attacks[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/melee_on_ranged.gd"
+    },
+    {
+      "id": "money_maker",
+      "kind": "internal",
+      "name_key": "o_money_maker_name",
+      "name": "Opulentor",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Creates a {moneycol}{money} core[/color] after\nbeing {ccol}{charge}{nb}overcharged{/ccol} for {ccol}[b]{max_energy}s[/b]{/ccol}",
+        "max_energy": 18.0
+      },
+      "script": "scn/player/bodyparts/internal/money_maker.gd"
+    },
+    {
+      "id": "perfect_generator",
+      "kind": "internal",
+      "name_key": "o_perfect_generator_name",
+      "name": "Pristine Mitochondrion",
+      "desc_key": null,
+      "description": null,
+      "flavor": "Just don't get hit",
+      "tags": [
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.2,
+      "needs_connection_warning": [
+        "EnergyConsumer"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "After finishing a room\n[b]without losing any {heart}{nb}HP[/b]:\n{ccol}{provided_charge}{charge} overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}"
+      },
+      "script": "scn/player/bodyparts/internal/perfect_generator.gd"
+    },
+    {
+      "id": "pickup_charge",
+      "kind": "internal",
+      "name_key": "o_pickup_charge_name",
+      "name": "Metabolic Mitochondrion",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.5,
+      "needs_connection_warning": [
+        "EnergyConsumer"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "After [b]taking a pickup[/b]:\n{ccol}{provided_charge}{charge} overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}"
+      },
+      "script": "scn/player/bodyparts/internal/pickup_charge.gd"
+    },
+    {
+      "id": "piercing",
+      "kind": "internal",
+      "name_key": "o_piercing_name",
+      "name": "Chitin Infuser",
+      "desc_key": "o_piercing_desc",
+      "description": "Attacks pierce through enemies",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{damage_mult}%[/color] damage after each pierce ({charge}{pos}+{charge_damage_mult}%{/pos})",
+        "charged_text": "{pos}+{charge_damage_mult}%{/pos} damage after each pierce",
+        "chainable_text": "Modifiers trigger [b]after each pierce[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/piercing.gd"
+    },
+    {
+      "id": "poison",
+      "kind": "internal",
+      "name_key": "o_poison_name",
+      "name": "Toxisome",
+      "desc_key": "o_poison_desc",
+      "description": "Attacks leave a toxic trail",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier",
+        "BulletModifier",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{size_mult}%{/pos} toxin size",
+        "stats_after_text": "Toxins deal [b]{damage}[/b] every [b]{attack_speed}s[/b]\n[b]{time}s[/b] toxin duration ({charge}{pos}+{charge_length_mult}%{/pos})",
+        "charged_text": "{pos}+{charge_length_mult}%{/pos} toxin duration",
+        "chainable_text": "Modifiers affect the [b]toxins[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/poison.gd"
+    },
+    {
+      "id": "proximity_zapper",
+      "kind": "internal",
+      "name_key": "o_proximity_zapper_name",
+      "name": "Galvanic Sac",
+      "desc_key": "o_proximity_zapper_desc",
+      "description": "Discharges accumulated electricity to nearby enemies",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified",
+        "CanBeBulletModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "[b]{damage}[/b] damage\nAccumulates a charge every [b]{charge_time}s[/b] ({charge}{pos}+{charged_charge_time}s{/pos})\nHolds [b]{charges}/{max_charges}[/b] charges",
+        "charged_text": "Accumulates an additional charge every [b]{charged_charge_time}s[/b]",
+        "max_energy": 10.0
+      },
+      "script": "scn/player/bodyparts/internal/proximity_zapper.gd"
+    },
+    {
+      "id": "range_extender",
+      "kind": "internal",
+      "name_key": "o_range_extender_name",
+      "name": "Extensor",
+      "desc_key": "o_range_extender_desc",
+      "description": "Increases range of projectiles, melee attacks and areas of effect",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{range_mult}%{/pos} range ({charge}{pos}+{charge_mult}%{/pos})",
+        "charged_text": "{pos}+{charge_mult}%{/pos} range"
+      },
+      "script": "scn/player/bodyparts/internal/range_extender.gd"
+    },
+    {
+      "id": "reroll_active",
+      "kind": "internal",
+      "name_key": "o_reroll_active_name",
+      "name": "Sequence Scrambler",
+      "desc_key": "o_reroll_active_desc",
+      "description": "Press {activate_key} to reroll reward pedestals",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyConsumer"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "max_energy": 40.0
+      },
+      "script": "scn/player/bodyparts/internal/reroll_active.gd"
+    },
+    {
+      "id": "rhythm_damage",
+      "kind": "internal",
+      "name_key": "o_rhythm_damage_name",
+      "name": "Sinoatrial Node",
+      "desc_key": "o_rhythm_damage_desc",
+      "description": "Attacking when synced to music gives bonus damage",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier",
+        "CanBeAttackModified",
+        "CanBeBulletModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{max_damage_mult}%{/pos} damage at the start of a bar\n{neg}{min_damage_mult}%{/neg} damage in the middle of a bar",
+        "charged_text": "Timing is more forgiving",
+        "chainable_text": "Modifiers apply [b]when timing is extra precise[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/rhythm_damage.gd"
+    },
+    {
+      "id": "rubber_bullets",
+      "kind": "internal",
+      "name_key": "o_rubber_bullets_name",
+      "name": "Elastosome",
+      "desc_key": "o_rubber_bullets_desc",
+      "description": "Projectiles bounce off walls and enemies",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [
+        "CanBeBulletModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Bounces {pos}{bounces}[/color] time ({charge}{pos}+1{/pos})",
+        "charged_text": "{pos}+1{/pos} bounce",
+        "chainable_text": "Modifiers trigger [b]after each bounce[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/rubber_bullets.gd"
+    },
+    {
+      "id": "sacrifice_charge_active",
+      "kind": "internal",
+      "name_key": "o_sacrifice_charge_active_name",
+      "name": "Autophagic Mitochondrion",
+      "desc_key": "o_sacrifice_charge_active_desc",
+      "description": "Press {activate_key} to sacrifice {neg}1{/neg} {heart} HP and {ccol}{provided_charge}x{nb}{charge}{nb}overcharge{/ccol} for {ccol}[b]{duration}s[/b]{/ccol}",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyGenerator"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyConsumer"
+      ],
+      "disabled": false,
+      "stats": {},
+      "script": "scn/player/bodyparts/internal/sacrifice_charge_active.gd"
+    },
+    {
+      "id": "second_life",
+      "kind": "internal",
+      "name_key": "o_second_life_name",
+      "name": "Cryptobiotic Core",
+      "desc_key": "o_second_life_desc",
+      "description": "Prevents death once and explodes",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Restores {pos}{hp}{/pos} {heart} HP ({charge}{pos}+{charge_hp}{/pos})\n[b]{damage}[/b] explosion damage{hr}Destroys itself on use",
+        "charged_text": "Restore {pos}+{charge_hp}{/pos} {heart} HP"
+      },
+      "script": "scn/player/bodyparts/internal/second_life.gd"
+    },
+    {
+      "id": "sentry_minion_active",
+      "kind": "internal",
+      "name_key": "o_sentry_active_name",
+      "name": "Sentry Nidus",
+      "desc_key": "o_sentry_active_desc",
+      "description": "Press {activate_key} to spawn a turret",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified",
+        "CanBeBulletModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}[b]{hp}[/b]{/pos} {heart} HP\n[b]{damage}[/b] damage every [b]{attack_speed}s[/b]",
+        "chainable_text": "Modifiers affect [b]turret attacks[/b]",
+        "max_energy": 10.0
+      },
+      "script": null
+    },
+    {
+      "id": "shrapnel",
+      "kind": "internal",
+      "name_key": "o_shrapnel_name",
+      "name": "Ruptusome",
+      "desc_key": "o_shrapnel_desc",
+      "description": "Attacks break into shrapnel projectiles on hit",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Creates [b]{num}[/b] shrapnel projectiles\n{pos}{damage_base}%{/pos} shrapnel damage ({charge}{pos}+{charge_mult_bonus}%{/pos})",
+        "charged_text": "{pos}+{charge_mult_bonus}%{/pos} shrapnel damage",
+        "chainable_text": "Modifiers affect [b]shrapnel projectiles[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/shrapnel.gd"
+    },
+    {
+      "id": "spear_active",
+      "kind": "internal",
+      "name_key": "o_spear_active_name",
+      "name": "Ciliate Strike",
+      "desc_key": "o_spear_active_desc",
+      "description": "Press {activate_key} to perform a dash attack",
+      "flavor": "",
+      "tags": [
+        "Active",
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Deals [b]{damage}[/b] damage when ramming",
+        "max_energy": 15.0
+      },
+      "script": "scn/player/bodyparts/internal/spear_active.gd"
+    },
+    {
+      "id": "splash",
+      "kind": "internal",
+      "name_key": "o_splash_name",
+      "name": "Echosome",
+      "desc_key": "o_splash_desc",
+      "description": "Attacks deal splash damage on impact",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}{damage_mult}%{/pos} splash damage\nSplash size ({charge}{pos}+{charge_scale_mult}%{/pos}) scales with attack's base damage",
+        "charged_text": "{pos}+{charge_scale_mult}%{/pos} splash size",
+        "chainable_text": "Modifiers affect the [b]splash attack[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/splash.gd"
+    },
+    {
+      "id": "split_shot",
+      "kind": "internal",
+      "name_key": "o_split_shot_name",
+      "name": "Bifurcator",
+      "desc_key": "o_split_shot_desc",
+      "description": "Splits attacks into two",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.2,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{color}{damage_mult}%[/color] damage\nWide spread ({charge}{pos}{charged_angle}x{/pos} narrower)",
+        "charged_text": "{pos}{charged_angle}x{/pos} narrower angle",
+        "chainable_text": "Modifiers affect [b]a random attack of the two[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/split_shot.gd"
+    },
+    {
+      "id": "stamina_charger",
+      "kind": "internal",
+      "name_key": "o_stamina_charger_name",
+      "name": "Glycogen Synthesizer",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "WeaponModifier"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Connected weapons no longer consume {stamina} {stamcol}stamina[/color]",
+        "charged_text": "Charges {pos}{charge_bonus}%{/pos} {stamina} {stamcol}stamina[/color] per second"
+      },
+      "script": "scn/player/bodyparts/internal/stamina_charger.gd"
+    },
+    {
+      "id": "travel_modifier",
+      "kind": "internal",
+      "name_key": "o_travel_modifier_name",
+      "name": "Chronosome",
+      "desc_key": "o_travel_modifier_desc",
+      "description": "Attacks improve over time as they travel",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "AttackModifier",
+        "BulletModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.3,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "{pos}+{damage_mult}%{/pos} damage every [b]{time}s[/b] ({charge}{pos}+{charge_time_mult}%{/pos} faster)",
+        "charged_text": "{pos}+{charge_time_mult}%{/pos} faster triggering time",
+        "chainable_text": "Modifiers trigger every [b]{time}s[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/travel_modifier.gd"
+    },
+    {
+      "id": "triple_shot",
+      "kind": "internal",
+      "name_key": "o_triple_shot_name",
+      "name": "Triosome",
+      "desc_key": "o_triple_shot_desc",
+      "description": "Triples attacks",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "BulletModifier",
+        "AttackModifier",
+        "CanBeBulletModified",
+        "CanBeAttackModified"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "CanBeAttackModified"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Additional attacks deal {pos}{damage_base}%{/pos} damage ({charge}{pos}+{charge_mult_bonus}%{/pos})",
+        "charged_text": "{pos}+{charge_mult_bonus}%{/pos} damage of additional attacks",
+        "chainable_text": "Modifiers affect [b]additional attacks[/b]"
+      },
+      "script": "scn/player/bodyparts/internal/triple_shot.gd"
+    },
+    {
+      "id": "upgrader",
+      "kind": "internal",
+      "name_key": "o_upgrader_name",
+      "name": "Refiner",
+      "desc_key": null,
+      "description": null,
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "EnergyGenerator"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "Upgrades the rarity of a random organelle after being {ccol}{charge} overcharged{/ccol} for {ccol}[b]{max_energy}s[/b]{/ccol}",
+        "max_energy": 120.0
+      },
+      "script": "scn/player/bodyparts/internal/upgrader.gd"
+    },
+    {
+      "id": "weapon_minion",
+      "kind": "internal",
+      "name_key": "o_weapon_minion_name",
+      "name": "Mitotic Nidus",
+      "desc_key": "o_weapon_minion_desc",
+      "description": "Spawns a minion that shares connected weapons",
+      "flavor": "",
+      "tags": [
+        "Internal",
+        "EnergyConsumer",
+        "CanBeAttackModified",
+        "UsesWeapons"
+      ],
+      "random_weight": 1.0,
+      "needs_connection_warning": [
+        "Weapon"
+      ],
+      "disabled": false,
+      "stats": {
+        "stats_text": "[b]{pos}{hp}{/pos}[/b] {heart} HP{hr}Connected weapons share cooldowns{hr}Revives the minion in battle after being {ccol}{charge}{nb}overcharged{/ccol} for {ccol}[b]{max_energy}s[/b]{/ccol}",
+        "chainable_text": "Modifiers affect [b]minion's attacks[/b]",
+        "max_energy": 20.0
+      },
+      "script": "scn/player/bodyparts/internal/weapon_minion.gd"
+    },
+    {
+      "id": "upgrade",
+      "kind": "other",
+      "name_key": "o_upgrade_name",
+      "name": "Upgrade",
+      "desc_key": "o_upgrade_desc",
+      "description": "Upgrades any organelle to a higher rarity",
+      "flavor": "",
+      "tags": [
+        "Upgrade"
+      ],
+      "random_weight": 3.5,
+      "needs_connection_warning": [],
+      "disabled": false,
+      "stats": {},
+      "script": "scn/player/bodyparts/other/upgrade.gd"
+    }
+  ],
+  "mutations": [
+    {
+      "id": "actives_energy_mutation",
+      "kind": "mutation",
+      "name_key": "m_actives_energy_name",
+      "name": "Metabolic Refinement",
+      "desc_key": "m_actives_energy_desc",
+      "description": "Active abilities require {pos}35% less{/pos} {charge} {ccol}overcharge{/ccol} time to activate",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "armor_mutation",
+      "kind": "mutation",
+      "name_key": "m_armor_name",
+      "name": "Ossification",
+      "desc_key": "m_armor_desc",
+      "description": "{pos}+{armor_num}{/pos} {armor} armor",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.5,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "attack_speed_mutation",
+      "kind": "mutation",
+      "name_key": "m_attack_speed_name",
+      "name": "Fast Twitch Fibers",
+      "desc_key": "m_attack_speed_desc",
+      "description": "{pos}+15%{/pos} attack speed",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "base_speed_mutation",
+      "kind": "mutation",
+      "name_key": "m_base_speed_name",
+      "name": "Cilium Growth",
+      "desc_key": "m_base_speed_desc",
+      "description": "{pos}+{speed_bonus}%{/pos} base speed",
+      "random_weight": 0.8,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "better_drops_mutation",
+      "kind": "mutation",
+      "name_key": "m_better_drops_name",
+      "name": "Scavenger's Gland",
+      "desc_key": "m_better_drops_desc",
+      "description": "{pos}+20%{/pos} chance for organelle rewards to spawn at a higher rarity",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "damage_mutation",
+      "kind": "mutation",
+      "name_key": "m_damage_name",
+      "name": "Corrosive Acid",
+      "desc_key": "m_damage_desc",
+      "description": "{pos}+10%{/pos} damage",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "damage_slot_mutation",
+      "kind": "mutation",
+      "name_key": "m_damage_slot_name",
+      "name": "Volatile Receptor",
+      "desc_key": "m_damage_slot_desc",
+      "description": "Turns a random external slot into a {pos}+40%{/pos} damage slot",
+      "random_weight": 0.7,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "dna_pickup_mutation",
+      "kind": "mutation",
+      "name_key": "m_dna_pickup_name",
+      "name": "RNA Retriggering",
+      "desc_key": "m_dna_pickup_desc",
+      "description": "Gain 5 to 15 {dna} {dnacol}DNA[/color]",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.2,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "dodge_cd_mutation",
+      "kind": "mutation",
+      "name_key": "m_dodge_cd_name",
+      "name": "Enhanced Boosters",
+      "desc_key": "m_dodge_cd_desc",
+      "description": "{pos}-30%{/pos} dodge cooldown",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "dodge_invul_mutation",
+      "kind": "mutation",
+      "name_key": "m_dodge_invul_name",
+      "name": "Survival Reflex",
+      "desc_key": "m_dodge_invul_desc",
+      "description": "{pos}+0.2s{/pos} dodge invulnerability",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "empty_islot_damage_mutation",
+      "kind": "mutation",
+      "name_key": "m_empty_islot_name",
+      "name": "Prokaryotic Ancestry",
+      "desc_key": "m_empty_islot_desc",
+      "description": "{pos}+15%{/pos} damage for each empty {islot} internal organelle slot",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "energy_generation_mutation",
+      "kind": "mutation",
+      "name_key": "m_energy_generation_name",
+      "name": "Mitochondrial Augmentation",
+      "desc_key": "m_energy_generation_desc",
+      "description": "{pos}+15%{/pos} {charge} {ccol}overcharge{/ccol} strength from {mitochondria} energy generators",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "energy_slot_mutation",
+      "kind": "mutation",
+      "name_key": "m_energy_slot_name",
+      "name": "Conductive Receptor",
+      "desc_key": "m_energy_slot_desc",
+      "description": "Turns a random internal slot into a {pos}+40%{/pos} overcharge strength slot",
+      "random_weight": 0.7,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "few_weapons_buff_mutation",
+      "kind": "mutation",
+      "name_key": "m_few_weapons_buff_name",
+      "name": "Focused Specialization",
+      "desc_key": "m_few_weapons_buff_desc",
+      "description": "{pos}+200%{/pos} damage\n{neg}-50%{/neg} damage for each weapon\n[i][color=gainsboro](Current total {color}{current}%[/color])[/color][/i]",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "first_shot_upgrade_mutation",
+      "kind": "mutation",
+      "name_key": "m_first_shot_upgrade_name",
+      "name": "Attack Preparation",
+      "desc_key": "m_first_shot_upgrade_desc",
+      "description": "First shot after no shooting for 5 seconds deals {pos}+100%{/pos} damage",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "full_heal_mutation",
+      "kind": "mutation",
+      "name_key": "m_full_heal_name",
+      "name": "Restoration",
+      "desc_key": "m_full_heal_desc",
+      "description": "Fully restore {heart} HP",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.5,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "health_mutation",
+      "kind": "mutation",
+      "name_key": "m_health_name",
+      "name": "Reinforced Membrane",
+      "desc_key": "m_health_desc",
+      "description": "{pos}+1{/pos} max {heart} HP",
+      "random_weight": 2.0,
+      "reward_drop_rate": 5.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "hp_drops_mutation",
+      "kind": "mutation",
+      "name_key": "m_hp_drops_name",
+      "name": "Catabolic Conversion",
+      "desc_key": "m_hp_drops_desc",
+      "description": "{pos}15%{/pos} chance to spawn a {heart}{nb}heart after finishing a room",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "left_hand_mutation",
+      "kind": "mutation",
+      "name_key": "m_left_hand_name",
+      "name": "Sinistral Chirality",
+      "desc_key": "m_left_hand_desc",
+      "description": "Weapons on the left half of the body deal {pos}+100%{/pos} damage\nWeapons on the right deal {neg}-50%{/neg} damage",
+      "random_weight": 0.2,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "low_health_buff_mutation",
+      "kind": "mutation",
+      "name_key": "m_low_health_buff_name",
+      "name": "Adrenaline",
+      "desc_key": "m_low_health_buff_desc",
+      "description": "{pos}+40%{/pos} damage and {pos}+40%{/pos} attack speed when at [b]2[/b] or less {heart} HP",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "money_damage_mutation",
+      "kind": "mutation",
+      "name_key": "m_money_damage_name",
+      "name": "Argentic Coating",
+      "desc_key": "m_money_damage_desc",
+      "description": "{pos}+0.5%{/pos} damage for each {money} [color=dodger_blue]core[/color]",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "money_pickup_mutation",
+      "kind": "mutation",
+      "name_key": "m_money_pickup_name",
+      "name": "Lucrumease",
+      "desc_key": "m_money_pickup_desc",
+      "description": "Gain 5 to 15 {money} {moneycol}cores[/color]",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.2,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "pickup_range_mutation",
+      "kind": "mutation",
+      "name_key": "m_pickup_range_name",
+      "name": "Endocytic Suction",
+      "desc_key": "m_pickup_range_desc",
+      "description": "Attract {dna} {dnacol}DNA[/color] pickups from {pos}+{range_bonus}%{/pos} farther",
+      "random_weight": 0.8,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "random_mitochondrion_mutation",
+      "kind": "mutation",
+      "name_key": "m_random_mitochondrion_name",
+      "name": "Energy Adaptation",
+      "desc_key": "m_random_mitochondrion_desc",
+      "description": "Gain a random [img=38]res://gfx/ui/tooltip_mitochondria_icon.png[/img] {ccol}mitochondrion[/color]",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.4,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "random_modifier_mutation",
+      "kind": "mutation",
+      "name_key": "m_random_modifier_name",
+      "name": "Recombinant Adaptation",
+      "desc_key": "m_random_modifier_desc",
+      "description": "Gain a random [img=38]res://gfx/ui/tooltip_modifiers_icon.png[/img] {chaincol}attack modifier[/color]",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.4,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "random_weapon_mutation",
+      "kind": "mutation",
+      "name_key": "m_random_weapon_name",
+      "name": "Offensive Adaptation",
+      "desc_key": "m_random_weapon_desc",
+      "description": "Gain a random weapon",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.4,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "range_mutation",
+      "kind": "mutation",
+      "name_key": "m_range_name",
+      "name": "Kinetic Extension",
+      "desc_key": "m_range_desc",
+      "description": "{pos}+25%{/pos} range of projectiles, melee attacks and areas of effect",
+      "random_weight": 1.5,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "recycle_mutation",
+      "kind": "mutation",
+      "name_key": "m_recycle_name",
+      "name": "Molecular Deconstruction",
+      "desc_key": "m_recycle_desc",
+      "description": "{pos}+3{/pos} {dna} {dnacol}DNA[/color] and {pos}+3{/pos} {money} {moneycol}cores[/color] for recycling organelles",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "reroll_mutation",
+      "kind": "mutation",
+      "name_key": "m_reroll_name",
+      "name": "Genetic Reshuffle",
+      "desc_key": "m_reroll_desc",
+      "description": "All non-movement organelles are changed into a random one of the same rarity{hr}Gain a random weapon{hr}{pos}+25%{/pos} damage",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.5,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "right_hand_mutation",
+      "kind": "mutation",
+      "name_key": "m_right_hand_name",
+      "name": "Dextral Chirality",
+      "desc_key": "m_right_hand_desc",
+      "description": "Weapons on the right half of the body deal {pos}+100%{/pos} damage\nWeapons on the left deal {neg}-50%{/neg} damage",
+      "random_weight": 0.2,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "slower_bullets_mutation",
+      "kind": "mutation",
+      "name_key": "m_slower_bullets_name",
+      "name": "Viscous Secretion",
+      "desc_key": "m_slower_bullets_desc",
+      "description": "Enemy projectiles move {pos}25%{/pos} slower",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "speed_damage_mutation",
+      "kind": "mutation",
+      "name_key": "m_speed_damage_name",
+      "name": "Additive Momentum",
+      "desc_key": "m_speed_damage_desc",
+      "description": "{pos}Bonus damage{/pos} based on current speed",
+      "random_weight": 1.5,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "spread_mutation",
+      "kind": "mutation",
+      "name_key": "m_spread_name",
+      "name": "Stenosis",
+      "desc_key": "m_spread_desc",
+      "description": "{pos}-50%{/pos} projectile spread",
+      "random_weight": 0.8,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "stamina_damage_mutation",
+      "kind": "mutation",
+      "name_key": "m_stamina_damage_name",
+      "name": "Starvation Reflex",
+      "desc_key": "m_stamina_damage_desc",
+      "description": "Up to {pos}+15%{/pos} damage for each empty {stamina} {stamcol}stamina[/color] container",
+      "random_weight": 1.5,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "stamina_mutation",
+      "kind": "mutation",
+      "name_key": "m_stamina_name",
+      "name": "Glycogen Reserve",
+      "desc_key": "m_stamina_desc",
+      "description": "{pos}+1{/pos} {stamina} {stamcol}stamina[/color] container",
+      "random_weight": 3.0,
+      "reward_drop_rate": 2.2,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "turret_eslot_mutation",
+      "kind": "mutation",
+      "name_key": "m_turret_eslot_name",
+      "name": "External Omnireceptor",
+      "desc_key": "m_turret_eslot_desc",
+      "description": "Makes a random external slot also accept internal organelles",
+      "random_weight": 0.7,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "turret_slot_mutation",
+      "kind": "mutation",
+      "name_key": "m_turret_slot_name",
+      "name": "Internal Omnireceptor",
+      "desc_key": "m_turret_slot_desc",
+      "description": "Makes a random internal slot also accept external organelles",
+      "random_weight": 0.7,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "level_1_ball_evolution",
+      "kind": "evolution",
+      "name_key": "e_ball_name",
+      "name": "Coccus",
+      "desc_key": null,
+      "description": null,
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": 2
+    },
+    {
+      "id": "level_1_normal_evolution",
+      "kind": "evolution",
+      "name_key": "e_normal_name",
+      "name": "Bacillus Magnus",
+      "desc_key": null,
+      "description": null,
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "level_1_side_evolution",
+      "kind": "evolution",
+      "name_key": "e_side_name",
+      "name": "Bacillus Transversus",
+      "desc_key": null,
+      "description": null,
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": 0.15,
+      "bonus_hp": null
+    },
+    {
+      "id": "level_2_chunky_butt_evolution",
+      "kind": "evolution",
+      "name_key": "e_chunky_butt_name",
+      "name": "Corynebacterium",
+      "desc_key": null,
+      "description": null,
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "level_2_chunky_head_evolution",
+      "kind": "evolution",
+      "name_key": "e_chunky_head_name",
+      "name": "Clostridium",
+      "desc_key": null,
+      "description": null,
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "level_2_long_evolution",
+      "kind": "evolution",
+      "name_key": "e_long_name",
+      "name": "Bacillus Longus",
+      "desc_key": null,
+      "description": null,
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    },
+    {
+      "id": "skip_evolution",
+      "kind": "evolution",
+      "name_key": "e_skip_name",
+      "name": "Skip Evolution",
+      "desc_key": "e_skip_desc",
+      "description": "No Effect",
+      "random_weight": 1.0,
+      "reward_drop_rate": 0.0,
+      "bonus_damage": null,
+      "bonus_hp": null
+    }
+  ]
+}

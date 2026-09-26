@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pathogenic Matrix</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Pathogenic Matrix</h1>
+  <div id="conn" class="conn offline">waiting…</div>
+  <div id="meta"></div>
+</header>
+
+<main>
+  <section id="choices" class="panel wide">
+    <h2>Choices</h2>
+    <div id="choices-body"><p class="dim">No pending choices detected.</p></div>
+  </section>
+
+  <section id="vitals" class="panel">
+    <h2>Vitals</h2>
+    <div class="vitals-grid">
+      <div><label>HP</label><div class="bar"><div id="hp-bar" class="fill hp"></div><span id="hp-txt"></span></div></div>
+      <div><label>Armor</label><span id="armor"></span></div>
+      <div><label>Stamina</label><div class="bar"><div id="stam-bar" class="fill stam"></div><span id="stam-txt"></span></div></div>
+      <div><label>DNA</label><div class="bar"><div id="dna-bar" class="fill dna"></div><span id="dna-txt"></span></div></div>
+      <div><label>Money</label><span id="money"></span></div>
+      <div><label>Level</label><span id="level"></span></div>
+    </div>
+  </section>
+
+  <section id="build" class="panel">
+    <h2>Build</h2>
+    <h3>External</h3><div id="ext-slots" class="slots"></div>
+    <h3>Internal</h3><div id="int-slots" class="slots"></div>
+    <h3>Mutations</h3><div id="mutations" class="mutations"></div>
+  </section>
+
+  <section id="catalog" class="panel">
+    <h2>Catalog <span id="catalog-src" class="dim"></span></h2>
+    <input id="cat-search" placeholder="filter organelles / mutations…">
+    <div id="catalog-body"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

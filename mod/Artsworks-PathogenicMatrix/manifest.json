@@ -1,0 +1,21 @@
+{
+	"name": "PathogenicMatrix",
+	"namespace": "Artsworks",
+	"version_number": "0.1.0",
+	"description": "Read-only run observer for the Pathogenic Matrix companion app. Emits your build, reward/shop/level-up choices and a session log as local JSON.",
+	"website_url": "https://github.com/artsworks/pathogenic-matrix",
+	"dependencies": [],
+	"extra": {
+		"godot": {
+			"authors": ["artsworks"],
+			"tags": ["utility"],
+			"description_rich": "Writes user://matrix_state.json and user://matrix_logs/*.jsonl, and optionally POSTs state to http://127.0.0.1:48710/state. Never changes game state.",
+			"optional_dependencies": [],
+			"load_before": [],
+			"incompatibilities": [],
+			"compatible_mod_loader_version": ["7.0.0"],
+			"compatible_game_version": ["1.0"],
+			"config_schema": {}
+		}
+	}
+}
