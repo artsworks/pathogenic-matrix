@@ -15,7 +15,7 @@ Pathogenic + mod ──▶ matrix_state.json / POST ──▶ python app/run.py 
 
 1. Install Python 3.10+ (tick "Add to PATH").
 2. Copy `dist/Artsworks-PathogenicMatrix-<version>.zip` into the game's `mods` folder.
-3. Run `python app\run.py --open` and play.
+3. Double-click `run.bat` (or run `python app\run.py --open`) and play.
 
 Full walkthrough for first-time modders: [docs/03-install-windows.md](docs/03-install-windows.md).
 

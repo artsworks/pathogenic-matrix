@@ -49,7 +49,7 @@ the log from Step 0, and for new files in
 
 ## 4. Run the companion app
 
-Open a Command Prompt in the unzipped folder and run:
+Double-click `run.bat` in the unzipped folder. Or open a Command Prompt there and run:
 
 ```
 python app\run.py --open
