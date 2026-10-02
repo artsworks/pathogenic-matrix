@@ -28,7 +28,8 @@ Download the repo as a zip from GitHub (green **Code** button → Download ZIP)
 and unzip it somewhere, e.g. `C:\Tools\pathogenic-matrix`.
 
 The mod zip is `dist\Artsworks-PathogenicMatrix-<version>.zip`. It's attached to
-each release, or you can build it with `python tools\pack_mod.py`.
+each release, or you can build it with `python tools\pack_mod.py --mod Artsworks-PathogenicMatrix`
+(without `--mod` it builds every mod in `mods\`).
 
 ## 3. Install the mod
 

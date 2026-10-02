@@ -1,0 +1,21 @@
+{
+	"name": "QoL",
+	"namespace": "Artsworks",
+	"version_number": "0.1.0",
+	"description": "Small quality-of-life tweaks for Pathogenic.",
+	"website_url": "https://github.com/artsworks/pathogenic-matrix",
+	"dependencies": [],
+	"extra": {
+		"godot": {
+			"authors": ["artsworks"],
+			"tags": ["utility"],
+			"description_rich": "Work in progress. Each tweak is a small script extension listed in mod_main.gd. No tweaks yet.",
+			"optional_dependencies": [],
+			"load_before": [],
+			"incompatibilities": [],
+			"compatible_mod_loader_version": ["7.0.0"],
+			"compatible_game_version": ["1.0"],
+			"config_schema": {}
+		}
+	}
+}

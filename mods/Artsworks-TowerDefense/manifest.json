@@ -1,0 +1,21 @@
+{
+	"name": "TowerDefense",
+	"namespace": "Artsworks",
+	"version_number": "0.1.0",
+	"description": "Tower-defense gameplay mode for Pathogenic. Hooks room and level generation.",
+	"website_url": "https://github.com/artsworks/pathogenic-matrix",
+	"dependencies": [],
+	"extra": {
+		"godot": {
+			"authors": ["artsworks"],
+			"tags": ["gameplay"],
+			"description_rich": "Work in progress. Installs a script extension on the level generator and method hooks on rooms. No gameplay changes yet.",
+			"optional_dependencies": [],
+			"load_before": [],
+			"incompatibilities": [],
+			"compatible_mod_loader_version": ["7.0.0"],
+			"compatible_game_version": ["1.0"],
+			"config_schema": {}
+		}
+	}
+}

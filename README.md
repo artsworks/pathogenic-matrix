@@ -30,13 +30,23 @@ session log is what confirms it.
 
 | Path | What |
 |---|---|
-| `mod/Artsworks-PathogenicMatrix/` | ModLoader mod (`observer.gd` does the work) |
+| `mods/Artsworks-PathogenicMatrix/` | read-only observer mod that feeds the app (`observer.gd` does the work) |
+| `mods/Artsworks-TowerDefense/` | gameplay mod, work in progress: hooks room and level generation |
+| `mods/Artsworks-QoL/` | quality-of-life script extensions, work in progress |
 | `app/run.py`, `app/matrix/` | stdlib HTTP/SSE server and recommender |
 | `app/static/` | dashboard |
 | `data/catalog.demo.json` | organelle/mutation catalog extracted from the demo |
-| `tools/pack_mod.py` | builds the mod zip into `dist/` |
+| `tools/pack_mod.py` | builds one zip per mod into `dist/` |
 | `tools/extract_catalog.py` | rebuilds the demo catalog from a GDRE-recovered project |
 | `docs/` | investigation notes, architecture and log schema, install guide |
+
+## Mods
+
+Each folder under `mods/` is one Godot-ModLoader mod named `<Namespace>-<Name>`,
+matching its `manifest.json`. It needs a `manifest.json` and a `mod_main.gd`;
+`pack_mod.py` copies every other file in the folder into the zip as well. Only
+PathogenicMatrix talks to the Python app. TowerDefense and QoL run entirely
+inside the game.
 
 ## Development
 
@@ -44,7 +54,9 @@ session log is what confirms it.
 python -m pip install ruff==0.6.9 mypy==1.11.2 gdtoolkit==4.3.3 "setuptools<70"
 ruff check app tools tests && ruff format --check app tools tests && mypy
 PYTHONPATH=app python -m unittest discover -s tests
-gdparse mod/Artsworks-PathogenicMatrix/*.gd && gdlint mod/Artsworks-PathogenicMatrix/*.gd
+gdparse $(find mods -name '*.gd') && gdlint $(find mods -name '*.gd') && gdformat --check $(find mods -name '*.gd')
+python tools/pack_mod.py                             # every mod -> dist/<Namespace>-<Name>-<version>.zip
+python tools/pack_mod.py --mod Artsworks-QoL         # one mod (repeat --mod for more)
 python app/run.py --replay path/to/session_X.jsonl   # drive the dashboard without the game
 ```
 
